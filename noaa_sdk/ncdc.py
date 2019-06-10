@@ -1,6 +1,9 @@
-from urllib.parse import urlencode
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
 import requests
-
+from future.builtins import super
 from util import UTIL
 
 

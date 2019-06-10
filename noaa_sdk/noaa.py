@@ -11,8 +11,11 @@ For copyright information, visit: https://www.openstreetmap.org/copyright
 """
 
 import json
-from urllib.parse import urlencode
-
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
+from future.builtins import super
 from noaa_sdk.util import UTIL
 from noaa_sdk.accept import ACCEPT
 
